@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "me.jwaxy.armsncurios.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CowboyHatItemMixin",
+    "TricorneItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
