@@ -8,15 +8,15 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
+import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 @EventBusSubscriber(modid = ArmsnCurios.MODID, value = Dist.CLIENT)
 public class ArmsnCuriosClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            CuriosRendererRegistry.register(ItemRegistry.COWBOY_HAT.get(), CowboyHatCurioRenderer::new);
-            CuriosRendererRegistry.register(ItemRegistry.TRICORNE_HAT.get(), TricorneCurioRenderer::new);
+            ICurioRenderer.register(ItemRegistry.COWBOY_HAT.get(), CowboyHatCurioRenderer::new);
+            ICurioRenderer.register(ItemRegistry.TRICORNE_HAT.get(), TricorneCurioRenderer::new);
         });
     }
 }
